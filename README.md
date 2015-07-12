@@ -1,6 +1,6 @@
 # Introduction
 A sample application that demonstrates the use of the [Drools Business Rules Engine](http://www.drools.org)
-with the [Spring Framework](http://spring.io).
+with the [Spring Framework](http://spring.io) for performing business validations on Java objects.
 
 # License
 This sample application and its associated source code in its entirety is being made
