@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class OrderTest
 {
-  @KSession("creditKnowledgeSession")
+  @KSession("orderKnowledgeSession")
   private StatelessKieSession orderRulesProcessor;
 
   private final Party buyer  = new Party();
