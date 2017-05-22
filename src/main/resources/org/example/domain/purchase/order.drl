@@ -1,16 +1,13 @@
-dialect "mvel"
+package org.example.domain.purchase;
 
 import java.util.Set;
-
-import org.example.domain.purchase.Order;
-import org.example.domain.purchase.OrderType;
 
 rule "consignment"
   when
     $errors: Set()
     $order: Order(type.equals(OrderType.CONSIGNMENT) && buyer.equals(seller))
   then
-    $errors.add("A party may not consign to itself.")
+    $errors.add("A party may not consign to itself.");
 end
 
 rule "sale"
@@ -18,7 +15,7 @@ rule "sale"
     $errors: Set()
     $order: Order(type.equals(OrderType.SALE) && buyer.equals(seller))
   then
-    $errors.add("A party may not sell to itself.")
+    $errors.add("A party may not sell to itself.");
 end
 
 rule "transfer"
@@ -26,5 +23,5 @@ rule "transfer"
     $errors: Set()
     $order: Order(type.equals(OrderType.TRANSFER) && !buyer.equals(seller))
   then
-    $errors.add("A party may only transfer to itself.")
+    $errors.add("A party may only transfer to itself.");
 end

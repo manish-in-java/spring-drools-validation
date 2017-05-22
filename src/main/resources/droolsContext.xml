@@ -7,12 +7,12 @@
     http://drools.org/schema/drools-spring http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/drools-container/drools-spring/src/main/resources/org/drools/container/spring/drools-spring-1.0.0.xsd">
   <drools:kbase id="creditKnowledgeBase">
    <drools:resources>
-      <drools:resource id="creditRules" source="classpath:rule/org/example/domain/subscription/credit.drl" type="DRL"/>
+      <drools:resource id="creditRules" source="classpath:org/example/domain/subscription/credit.drl" type="DRL"/>
     </drools:resources>
   </drools:kbase>
   <drools:kbase id="orderKnowledgeBase">
     <drools:resources>
-      <drools:resource id="orderRules" source="classpath:rule/org/example/domain/purchase/order.drl" type="DRL"/>
+      <drools:resource id="orderRules" source="classpath:org/example/domain/purchase/order.drl" type="DRL"/>
     </drools:resources>
   </drools:kbase>
 

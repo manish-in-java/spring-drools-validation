@@ -1,0 +1,31 @@
+package org.example.domain.subscription;
+
+import java.math.BigDecimal;
+
+rule "B1G1"
+  when
+    $credit: Credit(scheme.equals(Scheme.B1G1))
+  then
+    $credit.setBonus($credit.getAmount());
+end
+
+rule "B2G1"
+  when
+    $credit: Credit(scheme.equals(Scheme.B2G1))
+  then
+    $credit.setBonus($credit.getAmount().multiply(new BigDecimal(0.5)));
+end
+
+rule "B3G1"
+  when
+    $credit: Credit(scheme.equals(Scheme.B3G1))
+  then
+    $credit.setBonus($credit.getAmount().multiply(new BigDecimal(0.333333333)));
+end
+
+rule "B3G2"
+  when
+    $credit: Credit(scheme.equals(Scheme.B3G2))
+  then
+    $credit.setBonus($credit.getAmount().multiply(new BigDecimal(0.666666666)));
+end
