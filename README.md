@@ -1,4 +1,4 @@
-# Introduction [![Build status](https://drone.io/github.com/manish-in-java/spring-drools-validation/status.png)](https://drone.io/github.com/manish-in-java/spring-drools-validation/latest) [![Code coverage](https://coveralls.io/repos/manish-in-java/spring-drools-validation/badge.svg?branch=master&service=github)](https://coveralls.io/github/manish-in-java/spring-drools-validation?branch=master)
+# Introduction [![Code coverage](https://coveralls.io/repos/manish-in-java/spring-drools-validation/badge.svg?branch=master&service=github)](https://coveralls.io/github/manish-in-java/spring-drools-validation?branch=master)
 A sample application that demonstrates the use of the [Drools Business Rules Engine](http://www.drools.org)
 with the [Spring Framework](http://spring.io) for performing business validations on Java objects.
 
