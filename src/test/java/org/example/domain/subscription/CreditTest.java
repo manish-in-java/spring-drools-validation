@@ -1,13 +1,10 @@
 package org.example.domain.subscription;
 
-import org.drools.command.CommandFactory;
-import org.drools.runtime.StatelessKnowledgeSession;
-import org.example.domain.subscription.Credit;
-import org.example.domain.subscription.Scheme;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.kie.api.cdi.KSession;
+import org.kie.api.runtime.StatelessKieSession;
+import org.kie.internal.command.CommandFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,9 +20,8 @@ public class CreditTest
 {
   private static final Random RANDOM = new SecureRandom();
 
-  @Autowired
-  @Qualifier("creditKnowledgeSession")
-  private StatelessKnowledgeSession creditRulesProcessor;
+  @KSession("creditKnowledgeSession")
+  private StatelessKieSession creditRulesProcessor;
 
   @Test
   public void loadB1G1Scheme()

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:drools="http://drools.org/schema/drools-spring"
+       xmlns:kie="http://drools.org/schema/kie-spring"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://drools.org/schema/drools-spring http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/drools-container/drools-spring/src/main/resources/org/drools/container/spring/drools-spring-1.0.0.xsd">
-  <drools:kbase id="creditKnowledgeBase">
-   <drools:resources>
-      <drools:resource id="creditRules" source="classpath:org/example/domain/subscription/credit.drl" type="DRL"/>
-    </drools:resources>
-  </drools:kbase>
-  <drools:kbase id="orderKnowledgeBase">
-    <drools:resources>
-      <drools:resource id="orderRules" source="classpath:org/example/domain/purchase/order.drl" type="DRL"/>
-    </drools:resources>
-  </drools:kbase>
+                            http://drools.org/schema/kie-spring http://drools.org/schema/kie-spring.xsd">
+  <bean id="kiePostProcessor" class="org.kie.spring.annotations.KModuleAnnotationPostProcessor"/>
 
-  <drools:ksession id="creditKnowledgeSession" kbase="creditKnowledgeBase" name="creditKnowledgeSession" type="stateless"/>
-  <drools:ksession id="orderKnowledgeSession" kbase="orderKnowledgeBase" name="orderKnowledgeSession" type="stateless"/>
+  <kie:kmodule id="drools">
+    <kie:kbase name="creditKnowledgeBase" packages="org.example.domain.subscription">
+      <kie:ksession name="creditKnowledgeSession" type="stateless"/>
+    </kie:kbase>
+    <kie:kbase name="orderKnowledgeBase" packages="org.example.domain.purchase">
+      <kie:ksession name="orderKnowledgeSession" type="stateless"/>
+    </kie:kbase>
+  </kie:kmodule>
 </beans>
