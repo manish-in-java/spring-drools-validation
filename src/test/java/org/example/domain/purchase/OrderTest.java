@@ -14,7 +14,7 @@ import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
-@ContextConfiguration(locations = "classpath:springContext.xml")
+@ContextConfiguration(locations = "classpath:springTestContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class OrderTest
 {
